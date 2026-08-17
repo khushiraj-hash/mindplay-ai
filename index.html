@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MindPlay AI</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+
+</head>
+
+<body>
+
+<div class="game-screen">
+
+    <!-- CAMERA -->
+
+    <video id="video" autoplay playsinline></video>
+
+    <canvas id="output"></canvas>
+
+    <div class="overlay"></div>
+
+
+    <!-- SCORE -->
+
+    <div class="score-panel">
+
+        <div class="score-item">
+            <strong id="player-score">0</strong>
+            <span>YOU</span>
+        </div>
+
+        <div class="score-item">
+            <strong id="ai-score">0</strong>
+            <span>AI</span>
+        </div>
+
+        <div class="score-item">
+            <strong id="draw-score">0</strong>
+            <span>DRAW</span>
+        </div>
+
+    </div>
+
+
+    <!-- TITLE -->
+
+    <div class="title">
+
+        <h1>🧠 MindPlay AI</h1>
+
+        <p>Rock Paper Scissors</p>
+
+    </div>
+
+
+    <!-- CENTER -->
+
+    <div class="center-area">
+
+        <div id="status" class="status">
+            CAMERA READY
+        </div>
+
+        <div id="countdown" class="countdown"></div>
+
+
+        <div class="moves">
+
+            <div class="move-card">
+
+                <span>YOU</span>
+
+                <div id="player-choice" class="move-icon">
+                    ❔
+                </div>
+
+            </div>
+
+
+            <div class="vs">
+                VS
+            </div>
+
+
+            <div class="move-card">
+
+                <span>AI</span>
+
+                <div id="ai-choice" class="move-icon">
+                    🤖
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div id="result" class="result">
+            Press Play Round to start
+        </div>
+
+    </div>
+
+
+    <!-- CAMERA STATUS -->
+
+    <div class="camera-status">
+
+        <span id="camera-status">
+            📷 Starting camera...
+        </span>
+
+    </div>
+
+
+    <!-- CONTROLS -->
+
+    <div class="controls">
+
+        <button id="start-button" class="start-button">
+            🎮 Play Round
+        </button>
+
+        <button id="auto-button" class="control-button">
+            Auto: OFF
+        </button>
+
+        <button id="reset-button" class="control-button">
+            🔄 Reset
+        </button>
+
+    </div>
+
+
+    <!-- HELP -->
+
+    <div class="instructions">
+
+        <span>✊ Rock beats Scissors</span>
+
+        <span>✋ Paper beats Rock</span>
+
+        <span>✌️ Scissors beats Paper</span>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
